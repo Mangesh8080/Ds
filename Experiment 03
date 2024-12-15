@@ -1,1 +1,91 @@
+Write a Python program to compute following operations on String: 
 
+
+Task 1 - To display word with the longest length
+Code ---
+def longest_word(sentence):
+    words = sentence.split()
+    
+    longest = max(words, key=len)
+    
+    return longest
+sentence = input("Enter a sentence: ")
+result = longest_word(sentence)
+print(f"The longest word is: {result}")
+
+
+
+
+
+Task 2- To determines the frequency of occurrence of particular character in the string
+Code ----
+def char_frequency(string, char):
+  
+    frequency = string.count(char)
+    return frequency
+string = input("Enter a string: ")
+char = input("Enter the character to find its frequency: ")
+
+result = char_frequency(string, char)
+print(f"The character '{char}' appears {result} time(s) in the string.")
+
+
+
+
+Task 3 -- To check whether given string is palindrome or not
+Code –
+def is_palindrome(string):
+    cleaned_string = string.replace(" ", "").lower()
+  
+    return cleaned_string == cleaned_string[::-1]
+string = input("Enter a string: ")
+
+if is_palindrome(string):
+    print(f"'{string}' is a palindrome.")
+else:
+    print(f"'{string}' is not a palindrome.")
+
+
+
+
+Task 4 -- To display index of first appearance of the substring
+Code ---
+def find_substring_index(main_string, substring):
+    index = main_string.find(substring)
+    
+    if index != -1:
+        return index
+    else:
+        return "Substring not found"
+main_string = input("Enter the main string: ")
+substring = input("Enter the substring to search for: ")
+
+result = find_substring_index(main_string, substring)
+print(f"The first appearance of the substring '{substring}' is at index: {result}")
+
+
+
+
+Task 5 -- To count the occurrences of each word in a given string
+Code – 
+def count_word_occurrences(sentence):
+    words = sentence.lower().split()
+    
+  
+    word_count = {}
+  
+    for word in words:
+      
+        if word in word_count:
+            word_count[word] += 1
+        
+        else:
+            word_count[word] = 1
+    
+    return word_count
+
+sentence = input("Enter a sentence: ")
+
+result = count_word_occurrences(sentence)
+for word, count in result.items():
+    print(f"The word '{word}' occurs {count} time(s).")
